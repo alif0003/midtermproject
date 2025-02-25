@@ -56,17 +56,55 @@
   src: url(../font/Lato-Regular.ttf);
 }
 
+@keyframes solar {
+  0% {
+    background-image: linear-gradient(to right, #0872ad, #2cacc3);
+  }
+  10% {
+    background-image: linear-gradient(to right, #0889ad, #2cb1c3 );
+  }
+  20% {
+    background-image: linear-gradient(to right, #08adad, #2cc3bc );
+  }
+  30% {
+    background-image: linear-gradient(to right,#08ad97, #2cc3bc);
+  }
+  40% {
+    background-image: linear-gradient(to right,#08ad7b, #2cc3af);
+  }
+  50% {
+    background-image: linear-gradient(to right,#08ad7e, #2cc3b1);
+  }
+  60% {
+    background-image: linear-gradient(to right,#08ad7e, #2cc3b1);
+  }
+  70% {
+    background-image: linear-gradient(to right,#08ad8f, #2cc3bc);
+  }
+  80% {
+    background-image: linear-gradient(to right,#08ad9f, #2cc3c3);
+  }
+  90% {
+    background-image: linear-gradient(to right,#08ad94, #2cc3ac);
+  }
+  100% {
+    background-image: linear-gradient(to right,#08ad84, #2cc3c1);
+  }
+}
+
 :root {
   --brand-color: #0869a9;
   --text-color: white;
   --background-color: black;
-  --base-font-family: Playfair, system-ui;
-  --second-font-family: Lato, system-ui;
+  --base-font-family: Lato, system-ui;
+  --second-font-family: Playfair, system-ui;
 }
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--base-font-family);
+  margin-inline: auto;
+  max-inline-size: 900px;
 }
 
 a {
@@ -85,7 +123,8 @@ header {
 
   .logo {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2rem; 
+    font-family: var(--second-font-family);
     .highlight {
       background-image: linear-gradient(to bottom, transparent 0% 35%, var(--brand-color) 35% 75%, transparent 75% 100%);
       padding-inline: 8px;
@@ -94,7 +133,7 @@ header {
 
   a {
     text-decoration-line: none;
-    font-family: var(--second-font-family);
+
   }
 
   nav {
@@ -118,5 +157,40 @@ header {
 
 .hero {
   background-image: url('../image/milky-way.jpg');
+  padding-block-start: 300px;
+  padding-block-end: 100px;
+  padding-inline: 40px;
+  background-position: 50%;
+  background-size: 80rem;
+  margin-block-start: 20px;
+  box-shadow: 0 4px 64px 0 #fff4;
+
+  @media (width > 900px) {
+    border-radius: 30px;
+  }
+
+  @media (width <=400px) {
+    text-align: center;
+  }
+
+  .slogan{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-block-start: 10px;
+  }
+  .highlight {
+    background-image: linear-gradient(to right, #0872ad, #2cacc3); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: solar 4s linear 0s infinite alternate;
+  }
+  .description {
+    margin-block-start: 20px;
+    font-size: 0.7rem;
+  }
 }
 
