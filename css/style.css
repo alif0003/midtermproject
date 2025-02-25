@@ -1,0 +1,122 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+@font-face {
+  font-family: Playfair;
+  src: url(../font/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(../font/Lato-Regular.ttf);
+}
+
+:root {
+  --brand-color: #0869a9;
+  --text-color: white;
+  --background-color: black;
+  --base-font-family: Playfair, system-ui;
+  --second-font-family: Lato, system-ui;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--base-font-family);
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media ( width <= 900px) {
+    display: revert;
+    text-align: center;
+  }
+
+  .logo {
+    text-transform: uppercase;
+    font-size: 2rem;
+    .highlight {
+      background-image: linear-gradient(to bottom, transparent 0% 35%, var(--brand-color) 35% 75%, transparent 75% 100%);
+      padding-inline: 8px;
+    }
+  }
+
+  a {
+    text-decoration-line: none;
+    font-family: var(--second-font-family);
+  }
+
+  nav {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    .highlight {
+      background-color: var(--brand-color);
+      border-radius: 999px;
+      padding-inline: 15px;
+      padding-block: 5px;
+    }
+
+    @media (width <= 900px) {
+      margin-block-start: 20px;
+    }
+  }
+}
+
+.hero {
+  background-image: url('../image/milky-way.jpg');
+}
+
