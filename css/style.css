@@ -187,16 +187,15 @@ header {
 .locals {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 2rem; /* Espacio entre planetas */
-  justify-content: center; /* Centra los planetas */
-  align-items: center; /* Asegura alineación vertical */
-  max-width: 1500px; /* Asegura que no se expandan más de lo debido */
-  margin: 0 auto; /* Centra con respecto al header/hero */
-  padding: 1rem; /* Agrega espacio alrededor */
+  gap: 2rem; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 0 auto; 
+  padding: 1rem; 
 }
 
 .planet {
-  width: 100px; /* Tamaño fijo para cada planeta */
+  width: 100px; 
   text-align: center;
 }
 
@@ -257,7 +256,11 @@ a:focus-visible {
   }
 
   .locals {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+     
+    .planet {
+      width: fit-content;
+    }
   }
 
   .hero {
@@ -276,13 +279,13 @@ a:focus-visible {
   .slogan {
     font-size: 1rem;
   }
-  
-  /* .locals {
-    flex-wrap: wrap;
+
+  .button-link {
+    display: grid;
+    width: 90%;
+    padding: 10px;
   }
-  header {display: revert;
-  text-align: center;
-  } */
+
 }
 
 @media screen and (max-width: 400px) {
@@ -290,6 +293,7 @@ a:focus-visible {
     text-align: center;
   }
   .locals {
+    display: flex;
     flex-direction: column;
   }
   h2 {
