@@ -11,50 +11,52 @@
 
 @keyframes solar {
   0% {
-    background-image: linear-gradient(to right, #0872ad, #2cacc3);
+    background-image: linear-gradient(to right, #0884ad, #2cacc3);
   }
   10% {
-    background-image: linear-gradient(to right, #0889ad, #2cb1c3 );
+    background-image: linear-gradient(to right, #0879ad, #2cb1c3 );
   }
   20% {
-    background-image: linear-gradient(to right, #08adad, #2cc3bc );
+    background-image: linear-gradient(to right, #0876ad, #2cc3bc );
   }
   30% {
-    background-image: linear-gradient(to right,#08ad97, #2cc3bc);
+    background-image: linear-gradient(to right,#0881ad, #2cc3bc);
   }
   40% {
-    background-image: linear-gradient(to right,#08ad7b, #2cc3af);
+    background-image: linear-gradient(to right,#0884ad, #2cc3af);
   }
   50% {
-    background-image: linear-gradient(to right,#08ad7e, #2cc3b1);
+    background-image: linear-gradient(to right,#088fad, #2cc3b1);
   }
   60% {
-    background-image: linear-gradient(to right,#08ad7e, #2cc3b1);
+    background-image: linear-gradient(to right,#0891ad, #2cc3b1);
   }
   70% {
-    background-image: linear-gradient(to right,#08ad8f, #2cc3bc);
+    background-image: linear-gradient(to right,#0897ad, #2cc3bc);
   }
   80% {
-    background-image: linear-gradient(to right,#08ad9f, #2cc3c3);
+    background-image: linear-gradient(to right,#08a5ad, #2cc3c3);
   }
   90% {
-    background-image: linear-gradient(to right,#08ad94, #2cc3ac);
+    background-image: linear-gradient(to right,#089fad, #2cc3ac);
   }
   100% {
-    background-image: linear-gradient(to right,#08ad84, #2cc3c1);
+    background-image: linear-gradient(to right,#08adaa, #2cc3c1);
   }
 }
 
 @keyframes zoomin {
-  0% { 
+
+ 0% { 
     background-size: 100% 100%;
   }
   50% {
-    background-size: 101% 101%;
+    background-size: 105% 105%;
   }
   100% {
     background-size: 100% 100%;
   }
+  
 }
 
 :root {
@@ -86,11 +88,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media ( width <= 900px) {
-    display: revert;
-    text-align: center;
-  }
 
   .logo {
     text-transform: uppercase;
@@ -131,8 +128,8 @@ header {
 }
 
 .button-link {
-  display: inline-block;
-  width: 100%;
+  display: grid;
+  width: 90%;
   padding: 10px;
   border-radius: 20px;
   text-decoration: none;
@@ -165,7 +162,7 @@ header {
   animation: zoomin 10s ease-in-out infinite;
   border-radius: 30px;
 
-  .slogan{
+  .slogan {
     text-transform: uppercase;
     font-size: 0.8rem;
   }
@@ -188,19 +185,19 @@ header {
 
 
 .locals {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem; /* Espacio entre planetas */
+  justify-content: center; /* Centra los planetas */
+  align-items: center; /* Asegura alineación vertical */
+  max-width: 1500px; /* Asegura que no se expandan más de lo debido */
+  margin: 0 auto; /* Centra con respecto al header/hero */
+  padding: 1rem; /* Agrega espacio alrededor */
 }
 
 .planet {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  gap: 0.5 rem;
-  justify-content: center;
-  padding: 10px;
+  width: 100px; /* Tamaño fijo para cada planeta */
+  text-align: center;
 }
 
 h3, a, img {
@@ -250,9 +247,42 @@ a:focus-visible {
 
 @media screen and (max-width: 900px) {
 
+  body {
+    max-inline-size: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .locals {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste para pantallas más pequeñas */
+  }
+
+  .hero {
+    padding-block-start: 350px;
+    padding-block-end: 60px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+  
+  /* .locals {
     flex-wrap: wrap;
   }
+  header {display: revert;
+  text-align: center;
+  } */
 }
 
 @media screen and (max-width: 400px) {
